@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	user = function(name,age) { 
+
+	}
+	user.prototype.name = "";
+	user.prototype.age = "";
+	user.prototype.show = function(){
+		console.log(this);
+		return this;
+	}
+	console.log(user);
+	var user1 = new user;
+	user1.name = "abc";
+	user1.age = 20;
+	console.log(user1);
+	console.log(user1.show());
+</script>

@@ -1,0 +1,27 @@
+<!-- Immediate Invoke Function / Self Invoke Function -->
+<p id="txt"></p>
+<script type="text/javascript">
+	((a,b) => {
+		// alert(a + b)
+		document.querySelector("#txt").innerHTML = a + b;
+	})(10,20)
+
+	+function(x,y){
+		console.log(x + y);
+	}(10,20)
+	-function(x,y){
+		console.log(x + y);
+	}(10,20)
+	~function(x,y){
+		console.log(x + y);
+	}(10,20)
+	*function(x,y){
+		console.log(x + y);
+	}(10,20)
+	!function(x,y){
+		console.log(x + y);
+	}(10,20)
+	%function(x,y){
+		console.log(x + y);
+	}(10,20)
+</script>

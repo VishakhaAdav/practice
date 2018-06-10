@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	function modalBox(h,w,c) {
+		this.height = h;
+		this.width = w;
+		this.content = c;
+		this.show = function(){
+			return "<div style = 'width:"+this.width+";height:"+this.height+"'>"+this.content+"</div>"
+		}
+	}
+	modalBox1 = new modalBox (200,200,"divtext");
+	modalBox2 = new modalBox (100,100,"divtext2");
+	console.log(modalBox1.show());
+	console.log(modalBox2.show());
+</script>

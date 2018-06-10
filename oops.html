@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	function user(name,age) {
+		this.userName = name;
+		this.userAge = age;
+		this.show = function(){return this.userName}
+	}
+	var person1 = new user("vishakha", 25);
+	console.log(person1.userName)
+	console.log(person1.userAge)
+	console.log(person1.show())
+	var person2 = new user("xyz",20);
+	// console.log(person1);
+</script>
