@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	user1 = {name:'Vishakha',age:25}
+	console.log(user1);
+
+	user2 = new Object;
+	user2.name = 'Anish';
+	user2.age = 29;
+	console.log(user2);
+	console.log(user2.name);
+	console.log(user1['name']);
+
+	function userRecord(){
+		this.name = "Anish"
+		this.age = 29
+	}
+	user3 = new userRecord();
+	console.log(user3);
+	console.log(user3.name);
+	console.log(user3.age);
+
+	function userRecord(uname,uage){
+		this.name = uname
+		this.age = uage
+	}
+	user4 = new userRecord("Vishkha",25);
+	console.log(user4);
+	console.log(user4.name);
+	console.log(user4.age);
+
+	function divRec(w,h){
+		this.width = w
+		this.height = h
+		this.showans = function(){
+			return "<div styel='border:1px solid;width:"+this.width+"height:"+this.height+"'>text</div>"
+		}
+	}
+	div1 = new divRec("100px","200px");
+	console.log(div1.showans());
+	div2 = new divRec("400px","2430px");
+	console.log(div2.showans());
+</script>
+</body>
+</html>

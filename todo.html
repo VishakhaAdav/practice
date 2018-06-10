@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt" placeholder="Enter text">
+<button onclick="addData()">Enter</button>
+<div id="res"></div>
+<script type="text/javascript">
+	function addData() {
+		txt = document.querySelector("#txt").value;
+		// alert(txt);
+		store = new storeData(txt);
+		// console.log(store.show());
+		document.getElementById("res").appendChild(store.show());
+		document.querySelector("#txt").value = "";
+	}
+	function storeData(record){
+		this.show = function () {
+			var p = document.createElement("p");
+			var span1 = document.createElement("span");
+			var spantext = document.createTextNode(record);
+			span1.appendChild(spantext);
+
+			var btn = document.createElement("button");
+			var spantext = document.createTextNode("Delete");
+			var spanattr = document.createAttribute("onclick");
+			spanattr.value = "delData(this)";
+			btn.setAttributeNode(spanattr);
+			btn.appendChild(spantext);
+
+			p.innerHTML = span1.outerHTML + btn.outerHTML;
+			return p;
+		}
+	}
+	function delData(curtag){
+		curtag.parentNode.style.display = "none";
+	}
+</script>
+</body>
+</html>

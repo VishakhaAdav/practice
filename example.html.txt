@@ -1,0 +1,164 @@
+<div class="container">
+  <h5>If Statement</h5>
+  <div *ngIf="forIf1">
+    Show for If 1 Example
+  </div>
+  <div *ngIf="forIf2">
+    Show for If 2 Example
+  </div>
+  <hr />
+
+  <h5>hidden Statement (Property Binding)</h5>
+  <div [hidden]="isHidden1">This is hidden</div>
+  <div [hidden]="isHidden2">This is not hidden</div>
+  <hr />
+
+  <h5>If Else Statement</h5>
+  <div *ngIf="isCount.length > 0 ; else elseComp">Yes we have count</div>
+  <ng-template #elseComp>No we dont have count</ng-template>
+  <hr />
+
+  <h5>If Else using ng-template</h5>
+  <div *ngIf="isCount1.length > 0; then ifBlock else elseBlock"></div>
+  <ng-template #ifBlock>Has Count</ng-template>
+  <ng-template #elseBlock>No Count</ng-template>
+  <hr />
+
+  <h5>Even bubbling</h5>
+  <div (click)="showDiv()" style="border: 1px solid;padding: 20px;">
+    <button class="btn" (click)="showData($event)">Click Here</button>
+  </div>
+  <hr />
+
+  <h5>Data Binding</h5>
+  <p>Interpolation</p>
+  <h6>{{title}}</h6>
+  <p>use property binding for src</p>
+  <img [src]="path" alt="placeholder">
+  <hr />
+
+  <h5>Style Binding</h5>
+  <button class="btn" [style.background]="color1">button1</button>
+  <button class="btn" [style.background]="color2">button2</button>
+  <hr />
+
+  <h5>Attribute Binding</h5>
+  <table border="1" width="200">
+    <tr>
+      <td>Col 1</td>
+      <td>Col 2</td>
+    </tr>
+    <!--<tr><td [colspan]="colval">Test</td></tr>-->
+    <tr><td [attr.colspan]="colval">Test</td></tr>
+  </table>
+  <hr />
+
+  <h5>Class Binding</h5>
+  <button class="btn btn-danger" [class.btn-lg]="btntype1">Large</button>
+  <button class="btn btn-danger" [class.btn-lg]="btntype2">Normal</button>
+  <hr />
+
+  <h5>Switch Case</h5>
+  <button class="btn" (click)="viewMode = 'Login'">Login</button>
+  <button class="btn" (click)="viewMode = 'Register'">Register</button>
+  <button class="btn" (click)="viewMode = 'Forgot'">Forgot</button>
+  <div [ngSwitch] = "viewMode">
+    <div *ngSwitchCase="'Login'">This is Login</div>
+    <div *ngSwitchCase="'Register'">This is Register</div>
+    <div *ngSwitchDefault>This is forgot form</div>
+  </div>
+  <hr />
+
+  <h5>For Statement</h5>
+  <div *ngFor = "let x of ngForvar1">{{x}}</div>
+  <ul>
+    <li *ngFor = "let y of ngForvar2">{{y.name}}</li>
+  </ul>
+  <hr />
+
+  <h5>Piping Concept</h5>
+  <h6>{{listUsers.name | titlecase}}</h6>
+  <h6>{{listUsers.name | lowercase}}</h6>
+  <h6>{{listUsers.name | uppercase}}</h6>
+
+  <h6>{{listUsers.rating | number:'1.1-2'}}</h6>
+  <h6>{{listUsers.rating | number:'2.1-3'}}</h6>
+  <h6>{{listUsers.rating | number:'3.1-4'}}</h6>
+
+  <h6>{{listUsers.price | currency}}</h6>
+  <h6>{{listUsers.price | currency:'AUD'}}</h6>
+  <h6>{{listUsers.price | currency:'AUD':false}}</h6>
+  <h6>{{listUsers.price | currency:'AUD':true:'3.1-2'}}</h6>
+
+  <h6>{{listUsers.releaseDate}}</h6>
+  <h6>{{listUsers.releaseDate | date:'short'}}</h6>
+  <h6>{{listUsers.releaseDate | date:'shortDate'}}</h6>
+  <hr />
+
+  <h5>Template Variable</h5>
+  <input type="text" class="input" #email (keyup.enter)="showEmail(email.value)">
+  <hr />
+</div>
+
+
+<script type="text/javascript">
+	forIf1 = true;
+  forIf2 = false;
+  isHidden1 = true;
+  isHidden2 = false;
+  // isCount = [100,200];
+  isCount = [];
+  // isCount1 = [20,30];
+  isCount1 = [];
+
+  showData(e) {
+    // console.log(typeof e);
+    e.stopPropagation();
+    console.log('button clicked');
+  }
+  showDiv() {
+    console.log('Div Clicked');
+  }
+
+  title = 'Hello World';
+  path = 'http://via.placeholder.com/140x100';
+
+  color1 = 'red';
+  color2 = 'pink';
+
+  colval = 2;
+
+  btntype1 = true;
+  btntype2 = false;
+
+  viewMode = 'Register';
+
+  ngForvar1 = [100, 200, 300, 400];
+  ngForvar2 = [{name: 'Vishakha', age: 24}{name: 'Anish', age: 28}];
+
+  listUsers = {
+    name: 'Vishakha Adav',
+    rating: 3.5678,
+    price: 23.47,
+    students: 123895,
+    releaseDate: new Date (2018 , 3, 22)
+  };
+  showEmail(data1){
+    console.log(data1 + "From template variable");
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

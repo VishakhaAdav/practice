@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" id="txt" placeholder="Enter DOB">
+	<button id="btn">Enter</button>
+	<p id="res"></p>
+
+	<script type="text/javascript">
+		// dob = function () {
+		// 	val = document.querySelector('#txt').value;
+		// 	console.log(val);
+
+		// 	ans = val.split('-');
+		// 	console.log(ans);
+
+		// 	year = ans[2];
+		// 	console.log(year);
+
+		// 	cur_rec = new Date();
+		// 	console.log(cur_rec);
+
+		// 	cur_year = cur_rec.getFullYear();
+		// 	console.log(cur_year);
+
+		// 	age = cur_year - year;
+		// 	console.log(age);
+		// 	document.getElementById("res").innerHTML = age;
+		// }
+
+		document.getElementById('btn').addEventListener('click', function(){
+			val = document.querySelector('#txt').value;
+			console.log(val);
+
+			ans = val.split('-');
+			console.log(ans);
+
+			year = ans[2];
+			console.log(year);
+
+			cur_rec = new Date();
+			console.log(cur_rec);
+
+			cur_year = cur_rec.getFullYear();
+			console.log(cur_year);
+
+			age = cur_year - year;
+			console.log(age);
+			document.getElementById("res").innerHTML = age;
+		})
+	</script>
+</body>
+</html>

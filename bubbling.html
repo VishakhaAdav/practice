@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{border: 1px solid;width: 100px;height: 100px;}
+	</style>
+</head>
+<body>
+	<div onclick="check1()">
+		<button onclick="check2()">Enter</button>
+	</div>
+	<p>when event is fired on child, along with child the parent gets invoked<br/>(when same events are called)</p>
+	<script type="text/javascript">
+		function check1(){
+			console.log("div");
+		}
+		function check2(){
+			console.log("button");
+		}
+	</script>
+</body>
+</html>
